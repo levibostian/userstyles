@@ -1,0 +1,117 @@
+/* ==UserStyle==
+@name           Minimal Jira 
+@namespace      github.com/openstyles/stylus
+@version        0.1.0
+@description    Make Jira feel less heavy
+@author         levibostian (https://github.com/levibostian)
+==/UserStyle== */
+@-moz-document regexp("https?://\\w+\\.atlassian\\.net/jira/.*") {
+    
+    /* make it not as widescreen */
+    body {
+        width: 80% !important;
+        margin: 0 auto; /* center align */
+    }
+    
+    /* modify the theme to match dracula to be more pleasant */
+    html {
+        --ds-surface:#282A36 !important;
+        --ds-surface-sunken: #101204 !important;
+        
+        --hidden-opacity: 0.02;
+    }
+    
+    [data-fullscreen-id="fullscreen-board-breadcrumbs"] {
+        display: none;
+    }
+    
+    /* make the columns in sprint boards look more like trello */
+    [data-testid="software-board.board-container.board.virtual-board.fast-virtual-list.fast-virtual-list-wrapper"] {
+        margin: 10px 10px !important;
+    }
+    [data-testid="software-context-menu.ui.context-menu.children-wrapper"] {
+        margin-top: 10px !important;
+    }
+    
+    /* when you click on a ticket and it opens in sidebar, this is the sidebar */
+    [data-testid="issue-view-sticky-header-container.sticky-header"] {
+        opacity: var(--hidden-opacity);
+        transition: opacity 0.5s ease;  
+    }
+    [data-testid="issue-view-sticky-header-container.sticky-header"]:hover {
+        opacity: 1;
+    }
+    [data-testid="issue-view-foundation.quick-add.quick-add-items-compact.apps-button-dropdown--trigger"] {
+        opacity: var(--hidden-opacity);
+        transition: opacity 0.5s ease;
+    }
+    [data-testid="issue-view-foundation.quick-add.quick-add-items-compact.apps-button-dropdown--trigger"]:hover {
+        opacity: 1;
+    }
+    [data-testid="issue.views.issue-base.foundation.status.actions-wrapper"] {
+        opacity: var(--hidden-opacity);
+        transition: opacity 0.5s ease;
+    }
+    [data-testid="issue.views.issue-base.foundation.status.actions-wrapper"]:hover {
+        opacity: 1;
+    }
+    
+    /* a collection of buttons in top right of sprint board */
+    [id="automation-menu.ui.popup"],
+    [data-testid="favouriting.favorite-button-stateless.icon-wrapper"],
+    [id="po-spotlight-share-button"],
+    [data-testid="platform.ui.fullscreen-button.fullscreen-button"] {
+        opacity: var(--hidden-opacity);
+        transition: opacity 0.5s ease;        
+    }
+    
+    [id="automation-menu.ui.popup"]:hover,
+    [data-testid="favouriting.favorite-button-stateless.icon-wrapper"]:hover,
+    [id="po-spotlight-share-button"]:hover,
+    [data-testid="platform.ui.fullscreen-button.fullscreen-button"]:hover {
+        opacity: 1;
+    }
+    
+    /* collection of bottons by the filters */
+    [data-testid="software-board.header.controls-bar.swimlane-switch"],
+    [data-testid="software-onboarding-invites.ui.import-work-button.button.expanded"],
+    [data-testid="insights-show-insights-button.ui.insights-button"],
+    [data-testid="software-view-settings.ui.view-settings-button.responsive-button.expanded"] {
+        opacity: var(--hidden-opacity);
+        transition: opacity 0.5s ease;
+    }
+    
+    [data-testid="software-board.header.controls-bar.swimlane-switch"]:hover,
+    [data-testid="software-onboarding-invites.ui.import-work-button.button.expanded"]:hover,
+    [data-testid="insights-show-insights-button.ui.insights-button"]:hover,
+    [data-testid="software-view-settings.ui.view-settings-button.responsive-button.expanded"]:hover {
+        opacity: 1;
+    }
+    
+    /* hide all cover images */
+    img[data-testid="platform-board-kit.ui.card.card-cover.card-cover-image"] {
+        display: none !important;
+    }
+    
+    /* make the columns have more rounded edges to match trello */
+    [data-component-selector="platform-board-kit.ui.column.draggable-column"] * {
+        border-radius: 12px !important;
+    }
+    
+    [data-component-selector="platform-board-kit.ui.card-container"] {
+        border-radius: 10px !important;
+    }
+    
+    /* quickstart button */
+    [data-testid="software-onboarding-quickstart.ui.onboarding-button.onboarding-button"] {
+        display: none;
+    }
+    
+    #ak-jira-navigation {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    #ak-jira-navigation:hover {
+        opacity: 1;
+    }
+}
