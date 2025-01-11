@@ -22,3 +22,9 @@ Changes:
 - Add some padding to some of the elements to give them some room. 
 
 [Install with Stylus](https://raw.githubusercontent.com/levibostian/userstyles/main/jira-minimal.user.css)
+
+# Development 
+
+Stylus has an editor built-in. Create a new user style to open the editor. Then, copy and paste any of the .user.css files in this repo into the editor.
+
+To make editing easier, open 2 browser windows. One with the editor and one with the page you are editing. Stylus will automatically update the page when you save the file.
